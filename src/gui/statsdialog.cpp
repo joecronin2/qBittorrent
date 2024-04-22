@@ -78,8 +78,17 @@ void StatsDialog::update()
     // All-time DL/UL
     const qint64 atd = ss.allTimeDownload;
     const qint64 atu = ss.allTimeUpload;
+
+    // Total (per session) DL/UL
+    const qint64 td = ss.totalDownload;
+    const qint64 tu = ss.totalUpload;
+
     m_ui->labelAlltimeDL->setText(Utils::Misc::friendlyUnit(atd));
     m_ui->labelAlltimeUL->setText(Utils::Misc::friendlyUnit(atu));
+
+    m_ui->labelTotalDL->setText(Utils::Misc::friendlyUnit(td));
+    m_ui->labelTotalUL->setText(Utils::Misc::friendlyUnit(tu));
+
     // Total waste (this session)
     m_ui->labelWaste->setText(Utils::Misc::friendlyUnit(ss.totalWasted));
     // Global ratio

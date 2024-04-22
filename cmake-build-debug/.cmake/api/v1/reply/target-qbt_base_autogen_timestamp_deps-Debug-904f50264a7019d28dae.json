@@ -1,0 +1,27 @@
+{
+	"backtrace" : 0,
+	"backtraceGraph" : 
+	{
+		"commands" : [],
+		"files" : 
+		[
+			"src/base/CMakeLists.txt"
+		],
+		"nodes" : 
+		[
+			{
+				"file" : 0
+			}
+		]
+	},
+	"id" : "qbt_base_autogen_timestamp_deps::@da17c8cd1000ca7e4b79",
+	"isGeneratorProvided" : true,
+	"name" : "qbt_base_autogen_timestamp_deps",
+	"paths" : 
+	{
+		"build" : "src/base",
+		"source" : "src/base"
+	},
+	"sources" : [],
+	"type" : "UTILITY"
+}

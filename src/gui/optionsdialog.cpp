@@ -849,6 +849,32 @@ void OptionsDialog::loadConnectionTabOptions()
         m_ui->spinMaxUploadsPerTorrent->setEnabled(false);
     }
 
+    QStringList transferLimitsTimeUnitOptions = {
+        u"Hours"_s,
+        u"Days"_s,
+        u"Weeks"_s,
+        u"Months"_s
+    };
+
+    QStringList transferLimitsDataUnitOptions = {
+        u"KiB"_s,
+        u"MiB"_s,
+        u"GiB"_s,
+        u"TiB"_s
+    };
+
+    // add items to combo boxes
+    m_ui->comboBoxUploadTimeUnit->addItems(transferLimitsTimeUnitOptions);
+    m_ui->comboBoxDownloadTimeUnit->addItems(transferLimitsTimeUnitOptions);
+
+    m_ui->comboBoxUploadDataUnit->addItems(transferLimitsDataUnitOptions);
+    m_ui->comboBoxDownloadDataUnit->addItems(transferLimitsDataUnitOptions);
+
+    // transfer limits
+    m_ui->groupBoxUploadLimit->setChecked(session->ULTransferLimitEnabled());
+    m_ui->groupBoxDownloadLimit->setChecked(session->DLTransferLimitEnabled());
+
+
 #if defined(QBT_USES_LIBTORRENT2) && TORRENT_USE_I2P
     m_ui->textI2PHost->setText(session->I2PAddress());
     m_ui->spinI2PPort->setValue(session->I2PPort());
@@ -906,6 +932,18 @@ void OptionsDialog::loadConnectionTabOptions()
     connect(m_ui->spinMaxConnecPerTorrent, qSpinBoxValueChanged, this, &ThisType::enableApplyButton);
     connect(m_ui->spinMaxUploads, qSpinBoxValueChanged, this, &ThisType::enableApplyButton);
     connect(m_ui->spinMaxUploadsPerTorrent, qSpinBoxValueChanged, this, &ThisType::enableApplyButton);
+
+    // transfer limits
+    connect(m_ui->groupBoxDownloadLimit, &QGroupBox::toggled, this, &ThisType::enableApplyButton);
+    connect(m_ui->groupBoxUploadLimit, &QGroupBox::toggled, this, &ThisType::enableApplyButton);
+    connect(m_ui->spinBoxUploadTimeAmount, qSpinBoxValueChanged, this, &ThisType::enableApplyButton);
+    connect(m_ui->spinBoxDownloadTimeAmount, qSpinBoxValueChanged, this, &ThisType::enableApplyButton);
+    connect(m_ui->spinBoxUploadDataAmount, qSpinBoxValueChanged, this, &ThisType::enableApplyButton);
+    connect(m_ui->spinBoxDownloadDataAmount, qSpinBoxValueChanged, this, &ThisType::enableApplyButton);
+    connect(m_ui->comboBoxUploadTimeUnit, qComboBoxCurrentIndexChanged, this, &ThisType::enableApplyButton);
+    connect(m_ui->comboBoxUploadDataUnit, qComboBoxCurrentIndexChanged, this, &ThisType::enableApplyButton);
+    connect(m_ui->comboBoxDownloadTimeUnit, qComboBoxCurrentIndexChanged, this, &ThisType::enableApplyButton);
+    connect(m_ui->comboBoxUploadDataUnit, qComboBoxCurrentIndexChanged, this, &ThisType::enableApplyButton);
 
     connect(m_ui->comboProxyType, qComboBoxCurrentIndexChanged, this, &ThisType::adjustProxyOptions);
     connect(m_ui->comboProxyType, qComboBoxCurrentIndexChanged, this, &ThisType::enableApplyButton);
@@ -1035,7 +1073,6 @@ void OptionsDialog::saveSpeedTabOptions() const
     pref->setSchedulerStartTime(m_ui->timeEditScheduleFrom->time());
     pref->setSchedulerEndTime(m_ui->timeEditScheduleTo->time());
     pref->setSchedulerDays(static_cast<Scheduler::Days>(m_ui->comboBoxScheduleDays->currentIndex()));
-
     session->setUTPRateLimited(m_ui->checkLimituTPConnections->isChecked());
     session->setIncludeOverheadInLimits(m_ui->checkLimitTransportOverhead->isChecked());
     session->setIgnoreLimitsOnLAN(!m_ui->checkLimitLocalPeerRate->isChecked());

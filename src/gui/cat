@@ -1,0 +1,220 @@
+speedlimitdialog.ui:         <string>Upload:</string>
+speedlimitdialog.ui:       <widget class="QSlider" name="sliderUploadLimit">
+speedlimitdialog.ui:       <widget class="QSpinBox" name="spinUploadLimit">
+speedlimitdialog.ui:         <string>Upload:</string>
+speedlimitdialog.ui:       <widget class="QSlider" name="sliderAltUploadLimit">
+speedlimitdialog.ui:       <widget class="QSpinBox" name="spinAltUploadLimit">
+mainwindow.cpp:    const QString uploadRate = Utils::Misc::friendlyUnit(status.payloadUploadRate, true);
+mainwindow.cpp:    m_badger->updateSpeed(status.payloadDownloadRate, status.payloadUploadRate);
+mainwindow.cpp:        , tr("UP speed: %1", "e.g: Upload speed: 10 KiB/s").arg(uploadRate));
+mainwindow.cpp:        const QString title = tr("[D: %1, U: %2] %3", "D = Download; U = Upload; %3 is the rest of the window title")
+advancedsettings.cpp:    m_comboBoxChokingAlgorithm.addItem(tr("Upload rate based"), QVariant::fromValue(BitTorrent::ChokingAlgorithm::RateBased));
+advancedsettings.cpp:    addRow(CHOKING_ALGORITHM, (tr("Upload slots behavior") + u' ' + makeLink(u"https://www.libtorrent.org/reference-Settings.html#choking_algorithm", u"(?)"))
+advancedsettings.cpp:    m_comboBoxSeedChokingAlgorithm.addItem(tr("Fastest upload"), QVariant::fromValue(BitTorrent::SeedChokingAlgorithm::FastestUpload));
+advancedsettings.cpp:    addRow(SEED_CHOKING_ALGORITHM, (tr("Upload choking algorithm") + u' ' + makeLink(u"https://www.libtorrent.org/reference-Settings.html#seed_choking_algorithm", u"(?)"))
+speedlimitdialog.cpp:    const int uploadVal = std::max(0, (session->globalUploadSpeedLimit() / 1024));
+speedlimitdialog.cpp:    const int maxUpload = std::max(10000, (session->globalUploadSpeedLimit() / 1024));
+speedlimitdialog.cpp:    initSlider(m_ui->sliderUploadLimit, uploadVal, maxUpload);
+speedlimitdialog.cpp:    const int altUploadVal = std::max(0, (session->altGlobalUploadSpeedLimit() / 1024));
+speedlimitdialog.cpp:    const int altMaxUpload = std::max(10000, (session->altGlobalUploadSpeedLimit() / 1024));
+speedlimitdialog.cpp:    initSlider(m_ui->sliderAltUploadLimit, altUploadVal, altMaxUpload);
+speedlimitdialog.cpp:    m_ui->spinUploadLimit->setValue(uploadVal);
+speedlimitdialog.cpp:    m_ui->spinAltUploadLimit->setValue(altUploadVal);
+speedlimitdialog.cpp:        m_ui->spinUploadLimit->value(),
+speedlimitdialog.cpp:        m_ui->spinAltUploadLimit->value(),
+speedlimitdialog.cpp:    connect(m_ui->sliderUploadLimit, &QSlider::valueChanged, m_ui->spinUploadLimit, &QSpinBox::setValue);
+speedlimitdialog.cpp:    connect(m_ui->spinUploadLimit, qOverload<int>(&QSpinBox::valueChanged)
+speedlimitdialog.cpp:            , this, [this](const int value) { updateSliderValue(m_ui->sliderUploadLimit, value); });
+speedlimitdialog.cpp:    connect(m_ui->sliderAltUploadLimit, &QSlider::valueChanged, m_ui->spinAltUploadLimit, &QSpinBox::setValue);
+speedlimitdialog.cpp:    connect(m_ui->spinAltUploadLimit, qOverload<int>(&QSpinBox::valueChanged)
+speedlimitdialog.cpp:            , this, [this](const int value) { updateSliderValue(m_ui->sliderAltUploadLimit, value); });
+speedlimitdialog.cpp:    const int uploadLimit = (m_ui->spinUploadLimit->value() * 1024);
+speedlimitdialog.cpp:    if (m_initialValues.uploadSpeedLimit != m_ui->spinUploadLimit->value())
+speedlimitdialog.cpp:        session->setGlobalUploadSpeedLimit(uploadLimit);
+speedlimitdialog.cpp:    const int altUploadLimit = (m_ui->spinAltUploadLimit->value() * 1024);
+speedlimitdialog.cpp:    if (m_initialValues.altUploadSpeedLimit != m_ui->spinAltUploadLimit->value())
+speedlimitdialog.cpp:        session->setAltGlobalUploadSpeedLimit(altUploadLimit);
+optionsdialog.ui:                   <widget class="QLabel" name="lblUploadList">
+optionsdialog.ui:                <widget class="QSpinBox" name="spinMaxUploadsPerTorrent">
+optionsdialog.ui:                <widget class="QCheckBox" name="checkMaxUploadsPerTorrent">
+optionsdialog.ui:                <widget class="QCheckBox" name="checkMaxUploads">
+optionsdialog.ui:                <widget class="QSpinBox" name="spinMaxUploads">
+optionsdialog.ui:                <widget class="QGroupBox" name="groupBoxUploadLimit">
+optionsdialog.ui:                   <widget class="QComboBox" name="comboBoxUploadDataUnit">
+optionsdialog.ui:                   <widget class="QSpinBox" name="spinBoxUploadTimeAmount"/>
+optionsdialog.ui:                   <widget class="QLabel" name="labelUploadDataAmount">
+optionsdialog.ui:                   <widget class="QSpinBox" name="spinBoxUploadDataAmount"/>
+optionsdialog.ui:                   <widget class="QLabel" name="labelUploadTimeFrame">
+optionsdialog.ui:                   <widget class="QProgressBar" name="progressBarUploadLimit">
+optionsdialog.ui:                   <widget class="QComboBox" name="comboBoxUploadTimeUnit">
+optionsdialog.ui:                <widget class="QSpinBox" name="spinUploadLimit">
+optionsdialog.ui:                  <string>Upload:</string>
+optionsdialog.ui:                <widget class="QSpinBox" name="spinUploadLimitAlt">
+optionsdialog.ui:                  <string>Upload:</string>
+optionsdialog.ui:                <widget class="QSpinBox" name="spinMaxActiveUploads">
+optionsdialog.ui:                   <widget class="QSpinBox" name="spinUploadRateForSlowTorrents">
+optionsdialog.ui:                   <widget class="QLabel" name="labelUploadRateForSlowTorrents">
+optionsdialog.ui:                     <string>Upload rate threshold:</string>
+optionsdialog.ui:  <tabstop>checkMaxUploadsPerTorrent</tabstop>
+optionsdialog.ui:  <tabstop>spinMaxUploadsPerTorrent</tabstop>
+optionsdialog.ui:  <tabstop>checkMaxUploads</tabstop>
+optionsdialog.ui:  <tabstop>spinMaxUploads</tabstop>
+optionsdialog.ui:  <tabstop>spinUploadLimit</tabstop>
+optionsdialog.ui:  <tabstop>spinUploadLimitAlt</tabstop>
+optionsdialog.ui:  <tabstop>spinMaxActiveUploads</tabstop>
+statusbar.cpp:    QString upSpeedLbl = Utils::Misc::friendlyUnit(sessionStatus.payloadUploadRate, true);
+statusbar.cpp:    upSpeedLbl += u" (" + Utils::Misc::friendlyUnit(sessionStatus.totalPayloadUpload) + u')';
+optionsdialog.cpp:    intValue = session->maxUploads();
+optionsdialog.cpp:        m_ui->checkMaxUploads->setChecked(true);
+optionsdialog.cpp:        m_ui->spinMaxUploads->setEnabled(true);
+optionsdialog.cpp:        m_ui->spinMaxUploads->setValue(intValue);
+optionsdialog.cpp:        m_ui->checkMaxUploads->setChecked(false);
+optionsdialog.cpp:        m_ui->spinMaxUploads->setEnabled(false);
+optionsdialog.cpp:    intValue = session->maxUploadsPerTorrent();
+optionsdialog.cpp:        m_ui->checkMaxUploadsPerTorrent->setChecked(true);
+optionsdialog.cpp:        m_ui->spinMaxUploadsPerTorrent->setEnabled(true);
+optionsdialog.cpp:        m_ui->spinMaxUploadsPerTorrent->setValue(intValue);
+optionsdialog.cpp:        m_ui->checkMaxUploadsPerTorrent->setChecked(false);
+optionsdialog.cpp:        m_ui->spinMaxUploadsPerTorrent->setEnabled(false);
+optionsdialog.cpp:    m_ui->comboBoxUploadTimeUnit->addItems(transferLimitsTimeUnitOptions);
+optionsdialog.cpp:    m_ui->groupBoxUploadLimit->setChecked(session->ULTransferLimitEnabled());
+optionsdialog.cpp:    connect(m_ui->checkMaxUploads, &QAbstractButton::toggled, m_ui->spinMaxUploads, &QWidget::setEnabled);
+optionsdialog.cpp:    connect(m_ui->checkMaxUploads, &QAbstractButton::toggled, this, &ThisType::enableApplyButton);
+optionsdialog.cpp:    connect(m_ui->checkMaxUploadsPerTorrent, &QAbstractButton::toggled, m_ui->spinMaxUploadsPerTorrent, &QWidget::setEnabled);
+optionsdialog.cpp:    connect(m_ui->checkMaxUploadsPerTorrent, &QAbstractButton::toggled, this, &ThisType::enableApplyButton);
+optionsdialog.cpp:    connect(m_ui->spinMaxUploads, qSpinBoxValueChanged, this, &ThisType::enableApplyButton);
+optionsdialog.cpp:    connect(m_ui->spinMaxUploadsPerTorrent, qSpinBoxValueChanged, this, &ThisType::enableApplyButton);
+optionsdialog.cpp:    session->setMaxUploads(getMaxUploads());
+optionsdialog.cpp:    session->setMaxUploadsPerTorrent(getMaxUploadsPerTorrent());
+optionsdialog.cpp:    m_ui->spinUploadLimit->setValue(session->globalUploadSpeedLimit() / 1024);
+optionsdialog.cpp:    m_ui->spinUploadLimitAlt->setValue(session->altGlobalUploadSpeedLimit() / 1024);
+optionsdialog.cpp:    connect(m_ui->spinUploadLimit, qSpinBoxValueChanged, this, &ThisType::enableApplyButton);
+optionsdialog.cpp:    connect(m_ui->spinUploadLimitAlt, qSpinBoxValueChanged, this, &ThisType::enableApplyButton);
+optionsdialog.cpp:    session->setGlobalUploadSpeedLimit(m_ui->spinUploadLimit->value() * 1024);
+optionsdialog.cpp:    session->setAltGlobalUploadSpeedLimit(m_ui->spinUploadLimitAlt->value() * 1024);
+optionsdialog.cpp:    m_ui->spinMaxActiveUploads->setValue(session->maxActiveUploads());
+optionsdialog.cpp:    m_ui->labelUploadRateForSlowTorrents->setToolTip(slowTorrentsExplanation);
+optionsdialog.cpp:    m_ui->spinUploadRateForSlowTorrents->setValue(session->uploadRateForSlowTorrents());
+optionsdialog.cpp:    connect(m_ui->spinMaxActiveUploads, qSpinBoxValueChanged, this, &ThisType::enableApplyButton);
+optionsdialog.cpp:    connect(m_ui->spinUploadRateForSlowTorrents, qSpinBoxValueChanged, this, &ThisType::enableApplyButton);
+optionsdialog.cpp:    session->setMaxActiveUploads(m_ui->spinMaxActiveUploads->value());
+optionsdialog.cpp:    session->setUploadRateForSlowTorrents(m_ui->spinUploadRateForSlowTorrents->value());
+optionsdialog.cpp:int OptionsDialog::getMaxActiveUploads() const
+optionsdialog.cpp:    return m_ui->spinMaxActiveUploads->value();
+optionsdialog.cpp:int OptionsDialog::getMaxUploads() const
+optionsdialog.cpp:    if (!m_ui->checkMaxUploads->isChecked())
+optionsdialog.cpp:    return m_ui->spinMaxUploads->value();
+optionsdialog.cpp:int OptionsDialog::getMaxUploadsPerTorrent() const
+optionsdialog.cpp:    if (!m_ui->checkMaxUploadsPerTorrent->isChecked())
+optionsdialog.cpp:    return m_ui->spinMaxUploadsPerTorrent->value();
+speedlimitdialog.h:        int altUploadSpeedLimit;
+transferlistmodel.cpp:            {BitTorrent::TorrentState::Uploading, u"TransferList.Uploading"_s},
+transferlistmodel.cpp:            {BitTorrent::TorrentState::StalledUploading, u"TransferList.StalledUploading"_s},
+transferlistmodel.cpp:            {BitTorrent::TorrentState::ForcedUploading, u"TransferList.ForcedUploading"_s},
+transferlistmodel.cpp:            {BitTorrent::TorrentState::QueuedUploading, u"TransferList.QueuedUploading"_s},
+transferlistmodel.cpp:            {BitTorrent::TorrentState::CheckingUploading, u"TransferList.CheckingUploading"_s},
+transferlistmodel.cpp:            {BitTorrent::TorrentState::StoppedUploading, u"TransferList.StoppedUploading"_s},
+transferlistmodel.cpp:          {BitTorrent::TorrentState::Uploading, tr("Seeding", "Torrent is complete and in upload-only mode")},
+transferlistmodel.cpp:          {BitTorrent::TorrentState::StalledUploading, tr("Seeding", "Torrent is complete and in upload-only mode")},
+transferlistmodel.cpp:          {BitTorrent::TorrentState::ForcedUploading, tr("[F] Seeding", "Used when the torrent is forced started. You probably shouldn't translate the F.")},
+transferlistmodel.cpp:          {BitTorrent::TorrentState::QueuedUploading, tr("Queued", "Torrent is queued")},
+transferlistmodel.cpp:          {BitTorrent::TorrentState::CheckingUploading, tr("Checking", "Torrent local data is being checked")},
+transferlistmodel.cpp:          {BitTorrent::TorrentState::StoppedUploading, tr("Completed")},
+transferlistmodel.cpp:            case TR_UPSPEED: return tr("Up Speed", "i.e: Upload speed");
+transferlistmodel.cpp:            case TR_UPLIMIT: return tr("Up Limit", "i.e: Upload limit");
+transferlistmodel.cpp:            case TR_AMOUNT_UPLOADED: return tr("Uploaded", "Amount of data uploaded (e.g. in MB)");
+transferlistmodel.cpp:            case TR_AMOUNT_UPLOADED_SESSION: return tr("Session Upload", "Amount of data uploaded since program open (e.g. in MB)");
+transferlistmodel.cpp:            case TR_RATIO_LIMIT: return tr("Ratio Limit", "Upload share ratio limit");
+transferlistmodel.cpp:        return unitString(torrent->totalUpload());
+transferlistmodel.cpp:        return unitString(torrent->totalPayloadUpload());
+transferlistmodel.cpp:        return torrent->totalUpload();
+transferlistmodel.cpp:        return torrent->totalPayloadUpload();
+transferlistmodel.cpp:    case BitTorrent::TorrentState::StalledUploading:
+transferlistmodel.cpp:    case BitTorrent::TorrentState::Uploading:
+transferlistmodel.cpp:    case BitTorrent::TorrentState::ForcedUploading:
+transferlistmodel.cpp:    case BitTorrent::TorrentState::StoppedUploading:
+transferlistmodel.cpp:    case BitTorrent::TorrentState::QueuedUploading:
+transferlistmodel.cpp:    case BitTorrent::TorrentState::CheckingUploading:
+uithemecommon.h:        {u"TransferList.Uploading"_s, {Color::Primer::Light::accentFg, Color::Primer::Dark::accentFg}},
+uithemecommon.h:        {u"TransferList.StalledUploading"_s, {Color::Primer::Light::accentEmphasis, Color::Primer::Dark::accentEmphasis}},
+uithemecommon.h:        {u"TransferList.ForcedUploading"_s, {Color::Primer::Light::accentFg, Color::Primer::Dark::accentFg}},
+uithemecommon.h:        {u"TransferList.QueuedUploading"_s, {Color::Primer::Light::scaleYellow6, Color::Primer::Dark::scaleYellow6}},
+uithemecommon.h:        {u"TransferList.CheckingUploading"_s, {Color::Primer::Light::successFg, Color::Primer::Dark::successFg}},
+uithemecommon.h:        {u"TransferList.StoppedUploading"_s, {Color::Primer::Light::doneFg, Color::Primer::Dark::doneFg}},
+statsdialog.cpp:    const qint64 atu = ss.allTimeUpload;
+statsdialog.cpp:    const qint64 tu = ss.totalUpload;
+transferlistfilters/statusfilterwidget.h:    int m_nbStalledUploading = 0;
+torrentoptionsdialog.cpp:    const int globalUploadLimit = isAltLimitEnabled
+torrentoptionsdialog.cpp:            ? (session->altGlobalUploadSpeedLimit() / 1024)
+torrentoptionsdialog.cpp:            : (session->globalUploadSpeedLimit() / 1024);
+torrentoptionsdialog.cpp:    int maxUpload = (globalUploadLimit <= 0) ? 10000 : globalUploadLimit;
+torrentoptionsdialog.cpp:    if (uploadVal > maxUpload)
+torrentoptionsdialog.cpp:        maxUpload = uploadVal;
+torrentoptionsdialog.cpp:    m_ui->sliderUploadLimit->setMaximum(maxUpload);
+torrentoptionsdialog.cpp:    m_ui->sliderUploadLimit->setValue(allSameUpLimit ? uploadVal : (maxUpload / 2));
+torrentoptionsdialog.cpp:        m_ui->spinUploadLimit->setValue(uploadVal);
+torrentoptionsdialog.cpp:        m_ui->spinUploadLimit->setSpecialValueText(C_INEQUALITY);
+torrentoptionsdialog.cpp:        m_ui->spinUploadLimit->setMinimum(-1);
+torrentoptionsdialog.cpp:        m_ui->spinUploadLimit->setValue(-1);
+torrentoptionsdialog.cpp:        connect(m_ui->spinUploadLimit, qOverload<int>(&QSpinBox::valueChanged)
+torrentoptionsdialog.cpp:        .upSpeedLimit = m_ui->spinUploadLimit->value(),
+torrentoptionsdialog.cpp:    connect(m_ui->sliderUploadLimit, &QSlider::valueChanged, m_ui->spinUploadLimit, &QSpinBox::setValue);
+torrentoptionsdialog.cpp:    connect(m_ui->spinUploadLimit, qOverload<int>(&QSpinBox::valueChanged)
+torrentoptionsdialog.cpp:            , this, [this](const int value) { updateSliderValue(m_ui->sliderUploadLimit, value); });
+torrentoptionsdialog.cpp:        if (m_initialValues.upSpeedLimit != m_ui->spinUploadLimit->value())
+torrentoptionsdialog.cpp:            torrent->setUploadLimit(m_ui->spinUploadLimit->value() * 1024);
+torrentoptionsdialog.cpp:    m_ui->spinUploadLimit->setMinimum(0);
+torrentoptionsdialog.cpp:    m_ui->spinUploadLimit->setSpecialValueText(C_INFINITY);
+torrentoptionsdialog.cpp:    disconnect(m_ui->spinUploadLimit, qOverload<int>(&QSpinBox::valueChanged)
+macosdockbadge/badgeview.mm:static const NSColor *const kUploadBadgeColor = [NSColor colorWithRed:0.094 green:0.243 blue:0.835 alpha:0.9];    // #183ed5
+macosdockbadge/badgeview.mm:static const NSString *const kUploadArrow = @"\u2191";    // or U+2b61
+macosdockbadge/badgeview.mm:@property(nonatomic) int64_t fUploadRate;
+macosdockbadge/badgeview.mm:        _fUploadRate = 0.0;
+macosdockbadge/badgeview.mm:        // DownloadBadge and UploadBadge should have the same size
+macosdockbadge/badgeview.mm:    if ((self.fDownloadRate == downloadRate) && (self.fUploadRate == uploadRate))
+macosdockbadge/badgeview.mm:    self.fUploadRate = uploadRate;
+macosdockbadge/badgeview.mm:    const BOOL upload = self.fUploadRate >= 0.1;
+macosdockbadge/badgeview.mm:        [self badge:kUploadBadgeColor arrow:kUploadArrow
+macosdockbadge/badgeview.mm:            string:Utils::Misc::friendlyUnitCompact(self.fUploadRate).toNSString()
+optionsdialog.h:    int getMaxUploads() const;
+optionsdialog.h:    int getMaxUploadsPerTorrent() const;
+optionsdialog.h:    int getMaxActiveUploads() const;
+transferlistfilters/statusfilterwidget.cpp:    auto *stalledUploading = new QListWidgetItem(this);
+transferlistfilters/statusfilterwidget.cpp:    stalledUploading->setData(Qt::DisplayRole, tr("Stalled Uploading (0)"));
+transferlistfilters/statusfilterwidget.cpp:    stalledUploading->setData(Qt::DecorationRole, UIThemeManager::instance()->getIcon(u"stalledUP"_s));
+transferlistfilters/statusfilterwidget.cpp:    update(TorrentFilter::StalledUploading, m_nbStalledUploading);
+transferlistfilters/statusfilterwidget.cpp:    m_nbStalled = m_nbStalledUploading + m_nbStalledDownloading;
+transferlistfilters/statusfilterwidget.cpp:    item(TorrentFilter::StalledUploading)->setData(Qt::DisplayRole, tr("Stalled Uploading (%1)").arg(m_nbStalledUploading));
+transferlistfilters/statusfilterwidget.cpp:    item(TorrentFilter::StalledUploading)->setHidden(m_nbStalledUploading == 0);
+transferlistfilters/statusfilterwidget.cpp:    if (status[TorrentFilter::StalledUploading])
+transferlistfilters/statusfilterwidget.cpp:        --m_nbStalledUploading;
+transferlistfilters/statusfilterwidget.cpp:    m_nbStalled = m_nbStalledUploading + m_nbStalledDownloading;
+torrentoptionsdialog.ui:       <widget class="QSpinBox" name="spinUploadLimit">
+torrentoptionsdialog.ui:         <string>Upload:</string>
+torrentoptionsdialog.ui:       <widget class="QSlider" name="sliderUploadLimit">
+properties/peerlistwidget.cpp:    m_listModel->setHeaderData(PeerListColumns::UP_SPEED, Qt::Horizontal, tr("Up Speed", "i.e: Upload speed"));
+properties/peerlistwidget.cpp:    m_listModel->setHeaderData(PeerListColumns::TOT_UP, Qt::Horizontal, tr("Uploaded", "i.e: total data uploaded"));
+properties/peerlistwidget.cpp:    const QString totalUp = (hideZeroValues && (peer.totalUpload() <= 0))
+properties/peerlistwidget.cpp:            ? QString() : Utils::Misc::friendlyUnit(peer.totalUpload());
+properties/peerlistwidget.cpp:    setModelData(m_listModel, row, PeerListColumns::TOT_UP, totalUp, peer.totalUpload(), intDataTextAlignment);
+properties/propertieswidget.cpp:            m_ui->labelUpTotalVal->setText(tr("%1 (%2 this session)").arg(Utils::Misc::friendlyUnit(m_torrent->totalUpload())
+properties/propertieswidget.cpp:                , Utils::Misc::friendlyUnit(m_torrent->totalPayloadUpload())));
+properties/propertieswidget.cpp:            const QString ulAvg = Utils::Misc::friendlyUnit((m_torrent->totalUpload() / ((ulDuration == 0) ? -1 : ulDuration)), true);
+properties/speedwidget.cpp:    m_graphsMenu->addAction(tr("Total Upload"));
+properties/speedwidget.cpp:    m_graphsMenu->addAction(tr("Payload Upload"));
+properties/speedwidget.cpp:    m_graphsMenu->addAction(tr("Overhead Upload"));
+properties/speedwidget.cpp:    m_graphsMenu->addAction(tr("DHT Upload"));
+properties/speedwidget.cpp:    m_graphsMenu->addAction(tr("Tracker Upload"));
+properties/speedwidget.cpp:    sampleData[SpeedPlotView::PAYLOAD_UP] = btStatus.payloadUploadRate;
+properties/speedwidget.cpp:    sampleData[SpeedPlotView::OVERHEAD_UP] = btStatus.ipOverheadUploadRate;
+properties/speedwidget.cpp:    sampleData[SpeedPlotView::DHT_UP] = btStatus.dhtUploadRate;
+properties/speedwidget.cpp:    sampleData[SpeedPlotView::TRACKER_UP] = btStatus.trackerUploadRate;
+properties/propertieswidget.ui:                 <string>Upload Speed:</string>
+properties/propertieswidget.ui:                 <string>Upload Limit:</string>
+properties/propertieswidget.ui:               <widget class="QLabel" name="labelUploaded">
+properties/propertieswidget.ui:                 <string>Uploaded:</string>
+properties/speedplotview.cpp:    m_properties[UP] = GraphProperties(tr("Total Upload"), bluePen);
+properties/speedplotview.cpp:    m_properties[PAYLOAD_UP] = GraphProperties(tr("Payload Upload"), bluePen);
+properties/speedplotview.cpp:    m_properties[OVERHEAD_UP] = GraphProperties(tr("Overhead Upload"), bluePen);
+properties/speedplotview.cpp:    m_properties[DHT_UP] = GraphProperties(tr("DHT Upload"), bluePen);
+properties/speedplotview.cpp:    m_properties[TRACKER_UP] = GraphProperties(tr("Tracker Upload"), bluePen);

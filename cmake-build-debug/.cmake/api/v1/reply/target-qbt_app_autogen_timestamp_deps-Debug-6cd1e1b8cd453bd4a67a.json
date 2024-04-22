@@ -1,0 +1,42 @@
+{
+	"backtrace" : 0,
+	"backtraceGraph" : 
+	{
+		"commands" : [],
+		"files" : 
+		[
+			"src/app/CMakeLists.txt"
+		],
+		"nodes" : 
+		[
+			{
+				"file" : 0
+			}
+		]
+	},
+	"dependencies" : 
+	[
+		{
+			"backtrace" : 0,
+			"id" : "qbt_base::@da17c8cd1000ca7e4b79"
+		},
+		{
+			"backtrace" : 0,
+			"id" : "qbt_gui::@7675e61a69a6135e3026"
+		},
+		{
+			"backtrace" : 0,
+			"id" : "qbt_webui::@00d244fdeb748d3facd0"
+		}
+	],
+	"id" : "qbt_app_autogen_timestamp_deps::@ff93792cf40911dae1b8",
+	"isGeneratorProvided" : true,
+	"name" : "qbt_app_autogen_timestamp_deps",
+	"paths" : 
+	{
+		"build" : "src/app",
+		"source" : "src/app"
+	},
+	"sources" : [],
+	"type" : "UTILITY"
+}

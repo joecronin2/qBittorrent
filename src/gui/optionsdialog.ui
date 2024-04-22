@@ -129,7 +129,7 @@
             <rect>
              <x>0</x>
              <y>0</y>
-             <width>653</width>
+             <width>637</width>
              <height>1342</height>
             </rect>
            </property>
@@ -1916,31 +1916,10 @@ readme[0-9].txt: filter 'readme1.txt', 'readme2.txt' but not 'readme10.txt'.</st
                  </property>
                  <layout class="QGridLayout" name="gridLayout_18">
                   <item row="2" column="3">
-                   <widget class="QComboBox" name="comboBoxUploadDataUnit">
-                    <item>
-                     <property name="text">
-                      <string>KiB</string>
-                     </property>
-                    </item>
-                    <item>
-                     <property name="text">
-                      <string>MiB</string>
-                     </property>
-                    </item>
-                    <item>
-                     <property name="text">
-                      <string>GiB</string>
-                     </property>
-                    </item>
-                    <item>
-                     <property name="text">
-                      <string>TiB</string>
-                     </property>
-                    </item>
-                   </widget>
+                   <widget class="QComboBox" name="comboBoxUploadDataUnit"/>
                   </item>
                   <item row="1" column="2">
-                   <widget class="QSpinBox" name="spinBoxUploadTimeFrame"/>
+                   <widget class="QSpinBox" name="spinBoxUploadTimeAmount"/>
                   </item>
                   <item row="2" column="1">
                    <widget class="QLabel" name="labelUploadDataAmount">
@@ -1967,34 +1946,13 @@ readme[0-9].txt: filter 'readme1.txt', 'readme2.txt' but not 'readme10.txt'.</st
                    </widget>
                   </item>
                   <item row="1" column="3">
-                   <widget class="QComboBox" name="comboBoxUploadTimeFrame">
-                    <item>
-                     <property name="text">
-                      <string>Hours</string>
-                     </property>
-                    </item>
-                    <item>
-                     <property name="text">
-                      <string>Days</string>
-                     </property>
-                    </item>
-                    <item>
-                     <property name="text">
-                      <string>Weeks</string>
-                     </property>
-                    </item>
-                    <item>
-                     <property name="text">
-                      <string>Months</string>
-                     </property>
-                    </item>
-                   </widget>
+                   <widget class="QComboBox" name="comboBoxUploadTimeUnit"/>
                   </item>
                  </layout>
                 </widget>
                </item>
                <item>
-                <widget class="QGroupBox" name="checkDownloadLimit">
+                <widget class="QGroupBox" name="groupBoxDownloadLimit">
                  <property name="enabled">
                   <bool>true</bool>
                  </property>
@@ -2012,31 +1970,10 @@ readme[0-9].txt: filter 'readme1.txt', 'readme2.txt' but not 'readme10.txt'.</st
                    <widget class="QSpinBox" name="spinBoxDownloadDataAmount"/>
                   </item>
                   <item row="0" column="1">
-                   <widget class="QSpinBox" name="spinBoxDownloadTimeFrame"/>
+                   <widget class="QSpinBox" name="spinBoxDownloadTimeAmount"/>
                   </item>
                   <item row="2" column="2">
-                   <widget class="QComboBox" name="comboBoxDownloadDataUnit">
-                    <item>
-                     <property name="text">
-                      <string>KiB</string>
-                     </property>
-                    </item>
-                    <item>
-                     <property name="text">
-                      <string>MiB</string>
-                     </property>
-                    </item>
-                    <item>
-                     <property name="text">
-                      <string>GiB</string>
-                     </property>
-                    </item>
-                    <item>
-                     <property name="text">
-                      <string>TiB</string>
-                     </property>
-                    </item>
-                   </widget>
+                   <widget class="QComboBox" name="comboBoxDownloadDataUnit"/>
                   </item>
                   <item row="0" column="0">
                    <widget class="QLabel" name="labelDownloadTimeFrame">
@@ -2060,28 +1997,7 @@ readme[0-9].txt: filter 'readme1.txt', 'readme2.txt' but not 'readme10.txt'.</st
                    </widget>
                   </item>
                   <item row="0" column="2">
-                   <widget class="QComboBox" name="comboBoxDownloadTimeFrame">
-                    <item>
-                     <property name="text">
-                      <string>Hours</string>
-                     </property>
-                    </item>
-                    <item>
-                     <property name="text">
-                      <string>Days</string>
-                     </property>
-                    </item>
-                    <item>
-                     <property name="text">
-                      <string>Weeks</string>
-                     </property>
-                    </item>
-                    <item>
-                     <property name="text">
-                      <string>Months</string>
-                     </property>
-                    </item>
-                   </widget>
+                   <widget class="QComboBox" name="comboBoxDownloadTimeUnit"/>
                   </item>
                  </layout>
                 </widget>
@@ -2785,8 +2701,8 @@ readme[0-9].txt: filter 'readme1.txt', 'readme2.txt' but not 'readme10.txt'.</st
            <property name="geometry">
             <rect>
              <x>0</x>
-             <y>-280</y>
-             <width>653</width>
+             <y>0</y>
+             <width>620</width>
              <height>895</height>
             </rect>
            </property>

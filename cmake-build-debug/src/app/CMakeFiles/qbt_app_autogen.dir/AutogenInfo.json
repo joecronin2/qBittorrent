@@ -1,0 +1,193 @@
+{
+	"BUILD_DIR" : "/home/joe/Desktop/qBittorrent/cmake-build-debug/src/app/qbt_app_autogen",
+	"CMAKE_BINARY_DIR" : "/home/joe/Desktop/qBittorrent/cmake-build-debug",
+	"CMAKE_CURRENT_BINARY_DIR" : "/home/joe/Desktop/qBittorrent/cmake-build-debug/src/app",
+	"CMAKE_CURRENT_SOURCE_DIR" : "/home/joe/Desktop/qBittorrent/src/app",
+	"CMAKE_EXECUTABLE" : "/usr/bin/cmake",
+	"CMAKE_LIST_FILES" : 
+	[
+		"/home/joe/Desktop/qBittorrent/src/app/CMakeLists.txt",
+		"/home/joe/Desktop/qBittorrent/src/lang/lang.qrc",
+		"/home/joe/Desktop/qBittorrent/src/webui/www/translations/webui_translations.qrc",
+		"/home/joe/Desktop/qBittorrent/src/icons/icons.qrc",
+		"/home/joe/Desktop/qBittorrent/src/searchengine/searchengine.qrc",
+		"/home/joe/Desktop/qBittorrent/cmake-build-debug/src/lang/lang.qrc",
+		"/home/joe/Desktop/qBittorrent/cmake-build-debug/src/webui/www/translations/webui_translations.qrc",
+		"/home/joe/Desktop/qBittorrent/src/gui/about.qrc",
+		"/home/joe/Desktop/qBittorrent/src/webui/www/webui.qrc"
+	],
+	"CMAKE_SOURCE_DIR" : "/home/joe/Desktop/qBittorrent",
+	"CROSS_CONFIG" : false,
+	"DEP_FILE" : "/home/joe/Desktop/qBittorrent/cmake-build-debug/src/app/qbt_app_autogen/deps",
+	"DEP_FILE_RULE_NAME" : "qbt_app_autogen/timestamp",
+	"HEADERS" : 
+	[
+		[
+			"/home/joe/Desktop/qBittorrent/src/app/application.h",
+			"Mu",
+			"EWIEGA46WW/moc_application.cpp",
+			null
+		],
+		[
+			"/home/joe/Desktop/qBittorrent/src/app/applicationinstancemanager.h",
+			"Mu",
+			"EWIEGA46WW/moc_applicationinstancemanager.cpp",
+			null
+		],
+		[
+			"/home/joe/Desktop/qBittorrent/src/app/cmdoptions.h",
+			"Mu",
+			"EWIEGA46WW/moc_cmdoptions.cpp",
+			null
+		],
+		[
+			"/home/joe/Desktop/qBittorrent/src/app/filelogger.h",
+			"Mu",
+			"EWIEGA46WW/moc_filelogger.cpp",
+			null
+		],
+		[
+			"/home/joe/Desktop/qBittorrent/src/app/legalnotice.h",
+			"Mu",
+			"EWIEGA46WW/moc_legalnotice.cpp",
+			null
+		],
+		[
+			"/home/joe/Desktop/qBittorrent/src/app/qtlocalpeer/qtlocalpeer.h",
+			"Mu",
+			"WFZLCRUDYK/moc_qtlocalpeer.cpp",
+			null
+		],
+		[
+			"/home/joe/Desktop/qBittorrent/src/app/signalhandler.h",
+			"Mu",
+			"EWIEGA46WW/moc_signalhandler.cpp",
+			null
+		],
+		[
+			"/home/joe/Desktop/qBittorrent/src/app/stacktrace.h",
+			"Mu",
+			"EWIEGA46WW/moc_stacktrace.cpp",
+			null
+		],
+		[
+			"/home/joe/Desktop/qBittorrent/src/app/upgrade.h",
+			"Mu",
+			"EWIEGA46WW/moc_upgrade.cpp",
+			null
+		]
+	],
+	"HEADER_EXTENSIONS" : [ "h", "hh", "h++", "hm", "hpp", "hxx", "in", "txx" ],
+	"INCLUDE_DIR" : "/home/joe/Desktop/qBittorrent/cmake-build-debug/src/app/qbt_app_autogen/include",
+	"MOC_COMPILATION_FILE" : "/home/joe/Desktop/qBittorrent/cmake-build-debug/src/app/qbt_app_autogen/mocs_compilation.cpp",
+	"MOC_DEFINITIONS" : 
+	[
+		"BOOST_ASIO_ENABLE_CANCELIO",
+		"BOOST_ASIO_NO_DEPRECATED",
+		"OPENSSL_NO_SSL2",
+		"QBT_USES_DBUS",
+		"QBT_USES_LIBTORRENT2",
+		"QT_CORE_LIB",
+		"QT_DBUS_LIB",
+		"QT_DISABLE_DEPRECATED_UP_TO=0x060500",
+		"QT_GUI_LIB",
+		"QT_NETWORK_LIB",
+		"QT_NO_CAST_FROM_ASCII",
+		"QT_NO_CAST_FROM_BYTEARRAY",
+		"QT_NO_CAST_TO_ASCII",
+		"QT_NO_NARROWING_CONVERSIONS_IN_CONNECT",
+		"QT_SQL_LIB",
+		"QT_STRICT_ITERATORS",
+		"QT_USE_QSTRINGBUILDER",
+		"QT_WIDGETS_LIB",
+		"QT_XML_LIB",
+		"STACKTRACE",
+		"TORRENT_LINKING_SHARED",
+		"TORRENT_SSL_PEERS",
+		"TORRENT_USE_ASSERTS",
+		"TORRENT_USE_LIBCRYPTO",
+		"TORRENT_USE_OPENSSL"
+	],
+	"MOC_DEPEND_FILTERS" : 
+	[
+		[
+			"Q_PLUGIN_METADATA",
+			"[\n][ \t]*Q_PLUGIN_METADATA[ \t]*\\([^\\)]*FILE[ \t]*\"([^\"]+)\""
+		]
+	],
+	"MOC_INCLUDES" : 
+	[
+		"/home/joe/Desktop/qBittorrent/src",
+		"/usr/include/qt6/QtCore",
+		"/usr/include/qt6",
+		"/usr/lib/qt6/mkspecs/linux-g++",
+		"/usr/include/qt6/QtCore/6.7.0",
+		"/usr/include/qt6/QtCore/6.7.0/QtCore",
+		"/usr/include/qt6/QtNetwork",
+		"/usr/include/qt6/QtSql",
+		"/usr/include/qt6/QtXml",
+		"/usr/include/qt6/QtDBus",
+		"/usr/include/qt6/QtGui",
+		"/usr/include/qt6/QtWidgets",
+		"/usr/include",
+		"/usr/include/c++/13.2.1",
+		"/usr/include/c++/13.2.1/x86_64-pc-linux-gnu",
+		"/usr/include/c++/13.2.1/backward",
+		"/usr/lib/gcc/x86_64-pc-linux-gnu/13.2.1/include",
+		"/usr/local/include",
+		"/usr/lib/gcc/x86_64-pc-linux-gnu/13.2.1/include-fixed"
+	],
+	"MOC_MACRO_NAMES" : 
+	[
+		"Q_OBJECT",
+		"Q_GADGET",
+		"Q_NAMESPACE",
+		"Q_NAMESPACE_EXPORT",
+		"Q_GADGET_EXPORT",
+		"Q_ENUM_NS"
+	],
+	"MOC_OPTIONS" : [],
+	"MOC_PATH_PREFIX" : false,
+	"MOC_PREDEFS_CMD" : 
+	[
+		"/sbin/c++",
+		"-dM",
+		"-E",
+		"-c",
+		"/usr/share/cmake/Modules/CMakeCXXCompilerABI.cpp"
+	],
+	"MOC_PREDEFS_FILE" : "/home/joe/Desktop/qBittorrent/cmake-build-debug/src/app/qbt_app_autogen/moc_predefs.h",
+	"MOC_RELAXED_MODE" : false,
+	"MOC_SKIP" : [],
+	"MULTI_CONFIG" : false,
+	"PARALLEL" : 8,
+	"PARSE_CACHE_FILE" : "/home/joe/Desktop/qBittorrent/cmake-build-debug/src/app/CMakeFiles/qbt_app_autogen.dir/ParseCache.txt",
+	"QT_MOC_EXECUTABLE" : "/usr/lib/qt6/moc",
+	"QT_UIC_EXECUTABLE" : "",
+	"QT_VERSION_MAJOR" : 6,
+	"QT_VERSION_MINOR" : 7,
+	"SETTINGS_FILE" : "/home/joe/Desktop/qBittorrent/cmake-build-debug/src/app/CMakeFiles/qbt_app_autogen.dir/AutogenUsed.txt",
+	"SOURCES" : 
+	[
+		[ "/home/joe/Desktop/qBittorrent/src/app/application.cpp", "Mu", null ],
+		[
+			"/home/joe/Desktop/qBittorrent/src/app/applicationinstancemanager.cpp",
+			"Mu",
+			null
+		],
+		[ "/home/joe/Desktop/qBittorrent/src/app/cmdoptions.cpp", "Mu", null ],
+		[ "/home/joe/Desktop/qBittorrent/src/app/filelogger.cpp", "Mu", null ],
+		[ "/home/joe/Desktop/qBittorrent/src/app/legalnotice.cpp", "Mu", null ],
+		[ "/home/joe/Desktop/qBittorrent/src/app/main.cpp", "Mu", null ],
+		[
+			"/home/joe/Desktop/qBittorrent/src/app/qtlocalpeer/qtlocalpeer.cpp",
+			"Mu",
+			null
+		],
+		[ "/home/joe/Desktop/qBittorrent/src/app/signalhandler.cpp", "Mu", null ],
+		[ "/home/joe/Desktop/qBittorrent/src/app/stacktrace.cpp", "Mu", null ],
+		[ "/home/joe/Desktop/qBittorrent/src/app/upgrade.cpp", "Mu", null ]
+	],
+	"USE_BETTER_GRAPH" : false,
+	"VERBOSITY" : 0
+}

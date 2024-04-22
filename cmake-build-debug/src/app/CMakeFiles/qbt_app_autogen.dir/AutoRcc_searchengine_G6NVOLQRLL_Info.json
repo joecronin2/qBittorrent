@@ -1,0 +1,37 @@
+{
+	"BUILD_DIR" : "/home/joe/Desktop/qBittorrent/cmake-build-debug/src/app/qbt_app_autogen",
+	"CMAKE_BINARY_DIR" : "/home/joe/Desktop/qBittorrent/cmake-build-debug",
+	"CMAKE_CURRENT_BINARY_DIR" : "/home/joe/Desktop/qBittorrent/cmake-build-debug/src/app",
+	"CMAKE_CURRENT_SOURCE_DIR" : "/home/joe/Desktop/qBittorrent/src/app",
+	"CMAKE_SOURCE_DIR" : "/home/joe/Desktop/qBittorrent",
+	"CROSS_CONFIG" : false,
+	"GENERATOR" : "Ninja",
+	"INCLUDE_DIR" : "/home/joe/Desktop/qBittorrent/cmake-build-debug/src/app/qbt_app_autogen/include",
+	"INPUTS" : 
+	[
+		"/home/joe/Desktop/qBittorrent/src/searchengine/nova3/nova2.py",
+		"/home/joe/Desktop/qBittorrent/src/searchengine/nova3/novaprinter.py",
+		"/home/joe/Desktop/qBittorrent/src/searchengine/nova3/helpers.py",
+		"/home/joe/Desktop/qBittorrent/src/searchengine/nova3/socks.py",
+		"/home/joe/Desktop/qBittorrent/src/searchengine/nova3/nova2dl.py"
+	],
+	"LOCK_FILE" : "/home/joe/Desktop/qBittorrent/cmake-build-debug/src/app/CMakeFiles/qbt_app_autogen.dir/AutoRcc_searchengine_G6NVOLQRLL_Lock.lock",
+	"MULTI_CONFIG" : false,
+	"OPTIONS" : 
+	[
+		"--compress-algo",
+		"best",
+		"--threshold",
+		"5",
+		"-name",
+		"searchengine"
+	],
+	"OUTPUT_CHECKSUM" : "G6NVOLQRLL",
+	"OUTPUT_NAME" : "qrc_searchengine.cpp",
+	"RCC_EXECUTABLE" : "/usr/lib/qt6/rcc",
+	"RCC_LIST_OPTIONS" : [ "--list" ],
+	"SETTINGS_FILE" : "/home/joe/Desktop/qBittorrent/cmake-build-debug/src/app/CMakeFiles/qbt_app_autogen.dir/AutoRcc_searchengine_G6NVOLQRLL_Used.txt",
+	"SOURCE" : "/home/joe/Desktop/qBittorrent/src/searchengine/searchengine.qrc",
+	"USE_BETTER_GRAPH" : false,
+	"VERBOSITY" : 0
+}

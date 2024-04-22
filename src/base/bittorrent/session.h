@@ -401,6 +401,34 @@ namespace BitTorrent
         virtual void setMaxActiveUploads(int max) = 0;
         virtual int maxActiveTorrents() const = 0;
         virtual void setMaxActiveTorrents(int max) = 0;
+
+        virtual bool ULTransferLimitEnabled() const = 0;
+        virtual void setULTransferLimit(bool state) = 0;
+        virtual int ULTransferLimitTimeAmount() const = 0;
+        virtual void setULTransferLimitTimeAmount(int timeAmount) = 0;
+        virtual QString ULTransferLimitTimeUnit() const = 0;
+        virtual void setULTransferLimitTimeUnit(const QString& unit) = 0;
+        virtual int ULTransferLimitDataAmount() const = 0;
+        virtual void setULTransferLimitDataAmount(int amount) = 0;
+        virtual QString ULTransferLimitDataUnit() const = 0;
+        virtual void setULTransferLimitDataUnit(const QString& unit) = 0;
+        virtual int ULTransferLimitProgress() const = 0;
+
+        virtual bool DLTransferLimitEnabled() const = 0;
+        virtual int DLTransferLimitTimeAmount() const = 0;
+        virtual void setDLTransferLimitTimeAmount(int timeAmount) = 0;
+        virtual QString DLTransferLimitTimeUnit() const = 0;
+        virtual void setDLTransferLimitTimeUnit(const QString& unit) = 0;
+        virtual int DLTransferLimitDataAmount() const = 0;
+        virtual void setDLTransferLimitDataAmount(int amount) = 0;
+        virtual QString DLTransferLimitDataUnit() const = 0;
+        virtual void setDLTransferLimitDataUnit(const QString& unit) = 0;
+        virtual int DLTransferLimitProgress() const = 0;
+
+        // uses data from previous sessions, and transfer limits for a set time period
+        // to calculate how much can be transferred in the session before the limit is reached
+        virtual qint64 getRemainingSessionUL() const = 0;
+
         virtual BTProtocol btProtocol() const = 0;
         virtual void setBTProtocol(BTProtocol protocol) = 0;
         virtual bool isUTPRateLimited() const = 0;

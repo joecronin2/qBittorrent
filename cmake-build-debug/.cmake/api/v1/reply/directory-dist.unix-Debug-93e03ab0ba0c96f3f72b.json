@@ -1,0 +1,128 @@
+{
+	"backtraceGraph" : 
+	{
+		"commands" : 
+		[
+			"install"
+		],
+		"files" : 
+		[
+			"dist/unix/CMakeLists.txt"
+		],
+		"nodes" : 
+		[
+			{
+				"file" : 0
+			},
+			{
+				"command" : 0,
+				"file" : 0,
+				"line" : 27,
+				"parent" : 0
+			},
+			{
+				"command" : 0,
+				"file" : 0,
+				"line" : 27,
+				"parent" : 0
+			},
+			{
+				"command" : 0,
+				"file" : 0,
+				"line" : 36,
+				"parent" : 0
+			},
+			{
+				"command" : 0,
+				"file" : 0,
+				"line" : 41,
+				"parent" : 0
+			},
+			{
+				"command" : 0,
+				"file" : 0,
+				"line" : 46,
+				"parent" : 0
+			},
+			{
+				"command" : 0,
+				"file" : 0,
+				"line" : 51,
+				"parent" : 0
+			}
+		]
+	},
+	"installers" : 
+	[
+		{
+			"backtrace" : 1,
+			"component" : "doc",
+			"destination" : "share/man/man1",
+			"paths" : 
+			[
+				"doc/en/qbittorrent.1"
+			],
+			"type" : "file"
+		},
+		{
+			"backtrace" : 2,
+			"component" : "doc",
+			"destination" : "share/man/ru/man1",
+			"paths" : 
+			[
+				"doc/ru/qbittorrent.1"
+			],
+			"type" : "file"
+		},
+		{
+			"backtrace" : 3,
+			"component" : "data",
+			"destination" : "share/applications",
+			"paths" : 
+			[
+				"dist/unix/org.qbittorrent.qBittorrent.desktop"
+			],
+			"type" : "file"
+		},
+		{
+			"backtrace" : 4,
+			"component" : "data",
+			"destination" : "share/metainfo",
+			"paths" : 
+			[
+				"dist/unix/org.qbittorrent.qBittorrent.metainfo.xml"
+			],
+			"type" : "file"
+		},
+		{
+			"backtrace" : 5,
+			"component" : "data",
+			"destination" : "share/icons/hicolor",
+			"paths" : 
+			[
+				{
+					"from" : "dist/unix/menuicons",
+					"to" : "."
+				}
+			],
+			"type" : "directory"
+		},
+		{
+			"backtrace" : 6,
+			"component" : "data",
+			"destination" : "share/icons/hicolor/scalable/status",
+			"paths" : 
+			[
+				"src/icons/qbittorrent-tray.svg",
+				"src/icons/qbittorrent-tray-dark.svg",
+				"src/icons/qbittorrent-tray-light.svg"
+			],
+			"type" : "file"
+		}
+	],
+	"paths" : 
+	{
+		"build" : "dist/unix",
+		"source" : "dist/unix"
+	}
+}

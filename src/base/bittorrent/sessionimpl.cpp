@@ -446,6 +446,34 @@ SessionImpl::SessionImpl(QObject *parent)
     , m_maxUploads(BITTORRENT_SESSION_KEY(u"MaxUploads"_s), 20, lowerLimited(0, -1))
     , m_maxConnectionsPerTorrent(BITTORRENT_SESSION_KEY(u"MaxConnectionsPerTorrent"_s), 100, lowerLimited(0, -1))
     , m_maxUploadsPerTorrent(BITTORRENT_SESSION_KEY(u"MaxUploadsPerTorrent"_s), 4, lowerLimited(0, -1))
+
+    //
+    // TODO
+    //
+    // boolean. Toggles the upload/download limit
+    , m_ULTransferLimitEnabled(BITTORRENT_SESSION_KEY(u"m_ULTransferLimitEnabled"_s), false)
+    // time frame is selected with a combination of an integer and a unit like: "5" and "days"
+    , m_ULTransferLimitTimeAmount(BITTORRENT_SESSION_KEY(u"m_ULTransferLimitTimeAmount"_s), 1)
+    , m_ULTransferLimitTimeUnit(BITTORRENT_SESSION_KEY(u"m_ULTransferLimitTimeUnit"_s), QString::fromUtf8("Months"))
+
+    // same for data: "10", "MiB"
+    , m_ULTransferLimitDataAmount(BITTORRENT_SESSION_KEY(u"m_ULTransferLimitTimeDataAmount"_s), 10)
+    , m_ULTransferLimitDataUnit(BITTORRENT_SESSION_KEY(u"m_ULTransferLimitTimeUnit"_s), QString::fromUtf8("GiB"))
+
+    // upload/download limit progress bars. integer 0 - 100
+    , m_ULTransferLimitProgress(BITTORRENT_SESSION_KEY(u"m_ULTransferLimitProgress"_s), 0)
+
+    , m_DLTransferLimitEnabled(BITTORRENT_SESSION_KEY(u"m_DLTransferLimitEnabled"_s), false)
+
+    , m_DLTransferLimitTimeAmount(BITTORRENT_SESSION_KEY(u"m_DLTransferLimitTimeAmount"_s), 1)
+    , m_DLTransferLimitTimeUnit(BITTORRENT_SESSION_KEY(u"m_DLTransferLimitTimeUnit"_s), QString::fromUtf8("Months"))
+
+    , m_DLTransferLimitDataAmount(BITTORRENT_SESSION_KEY(u"m_DLTransferLimitDataAmount"_s), 10)
+    , m_DLTransferLimitDataUnit(BITTORRENT_SESSION_KEY(u"m_DLTransferLimitDataUnit"_s), QString::fromUtf8("GiB"))
+
+    , m_DLTransferLimitProgress(BITTORRENT_SESSION_KEY(u"m_DLTransferLimitProgress"_s), 0)
+
+
     , m_btProtocol(BITTORRENT_SESSION_KEY(u"BTProtocol"_s), BTProtocol::Both
         , clampValue(BTProtocol::Both, BTProtocol::UTP))
     , m_isUTPRateLimited(BITTORRENT_SESSION_KEY(u"uTPRateLimited"_s), true)
@@ -3952,6 +3980,90 @@ int SessionImpl::maxUploadsPerTorrent() const
     return m_maxUploadsPerTorrent;
 }
 
+bool SessionImpl::ULTransferLimitEnabled() const {
+    return m_ULTransferLimitEnabled;
+}
+
+void SessionImpl::setULTransferLimit(bool state) {
+    m_ULTransferLimitEnabled = state;
+}
+
+int SessionImpl::ULTransferLimitTimeAmount() const {
+    return m_ULTransferLimitTimeAmount;
+}
+
+void SessionImpl::setULTransferLimitTimeAmount(int timeAmount) {
+    m_ULTransferLimitTimeAmount = timeAmount;
+}
+
+QString SessionImpl::ULTransferLimitTimeUnit() const {
+    return m_ULTransferLimitTimeUnit;
+}
+
+void SessionImpl::setULTransferLimitTimeUnit(const QString& unit) {
+    m_ULTransferLimitTimeUnit = unit;
+}
+
+int SessionImpl::ULTransferLimitDataAmount() const {
+    return m_ULTransferLimitDataAmount;
+}
+
+void SessionImpl::setULTransferLimitDataAmount(int amount) {
+    m_ULTransferLimitDataAmount = amount;
+}
+
+QString SessionImpl::ULTransferLimitDataUnit() const {
+    return m_ULTransferLimitDataUnit;
+}
+
+void SessionImpl::setULTransferLimitDataUnit(const QString& unit) {
+    m_ULTransferLimitDataUnit = unit;
+}
+
+int SessionImpl::ULTransferLimitProgress() const {
+    return m_ULTransferLimitProgress;
+}
+
+bool SessionImpl::DLTransferLimitEnabled() const {
+    return m_DLTransferLimitEnabled;
+}
+
+int SessionImpl::DLTransferLimitTimeAmount() const {
+    return m_DLTransferLimitTimeAmount;
+}
+
+void SessionImpl::setDLTransferLimitTimeAmount(int timeAmount) {
+    m_DLTransferLimitTimeAmount = timeAmount;
+}
+
+QString SessionImpl::DLTransferLimitTimeUnit() const {
+    return m_DLTransferLimitTimeUnit;
+}
+
+void SessionImpl::setDLTransferLimitTimeUnit(const QString& unit) {
+    m_DLTransferLimitTimeUnit = unit;
+}
+
+int SessionImpl::DLTransferLimitDataAmount() const {
+    return m_DLTransferLimitDataAmount;
+}
+
+void SessionImpl::setDLTransferLimitDataAmount(int amount) {
+    m_DLTransferLimitDataAmount = amount;
+}
+
+QString SessionImpl::DLTransferLimitDataUnit() const {
+    return m_DLTransferLimitDataUnit;
+}
+
+void SessionImpl::setDLTransferLimitDataUnit(const QString& unit) {
+    m_DLTransferLimitDataUnit = unit;
+}
+
+int SessionImpl::DLTransferLimitProgress() const {
+    return m_DLTransferLimitProgress;
+}
+
 void SessionImpl::setMaxUploadsPerTorrent(int max)
 {
     max = (max > 0) ? max : -1;
@@ -6116,20 +6228,12 @@ void SessionImpl::processTrackerStatuses()
 
     m_updatedTrackerStatuses.clear();
 }
-
-
-struct SessionInfo {
-    QDateTime startDateTime;
-    QDateTime endDateTime;
-    qint64 sessionUpload;
-    qint64 sessionDownload;
-};
-
-void SessionImpl::saveSessionInfo() const {
+void SessionImpl::saveSessionInfo()
+{
     qDebug() << "savesessioninfo called";
-
+    std::unique_ptr<QSettings> settings = Profile::instance()->applicationSettings(u"qBittorrent-data"_s);
     // Load the list of session statistics
-    QList sessions = loadPreviousSessionsInfo();
+    QList<SessionInfo> sessions = loadPreviousSessionsInfo();
 
     // Make a map to store the new session statistics
     SessionInfo newSession;
@@ -6139,7 +6243,7 @@ void SessionImpl::saveSessionInfo() const {
     newSession.sessionDownload = m_status.totalDownload;
 
     // Push the new session to the list
-    sessions.append(newStats);
+    sessions.append(newSession);
 
     QVariantList sessionsVariantList;
     for (const auto& session : sessions) {
@@ -6154,14 +6258,17 @@ void SessionImpl::saveSessionInfo() const {
     qDebug() << sessions.size();
 
     // Save the list back
-    settings->setValue(u"Stats/Sessions"_s, sessions);
+    settings->setValue(u"Stats/Sessions"_s, sessionsVariantList);
 
 }
 
-QList<SessionInfo> SessionImpl::loadPreviousSessionsInfo() {
+QList<SessionImpl::SessionInfo> SessionImpl::loadPreviousSessionsInfo()
+{
     // make a list
-    QVariantList sessions = settings->value(u"Stats/Sessions"_s).toList();
+    std::unique_ptr<QSettings> settings = Profile::instance()->applicationSettings(u"qBittorrent-data"_s);
+    QVariantList sessionsVariantList = settings->value(u"Stats/Sessions"_s).toList();
 
+    QList<SessionImpl::SessionInfo> sessions;
     // Convert QVariantList to SessionInfo list
     for (const QVariant& sessionVariant : sessionsVariantList) {
         QVariantMap sessionMap = sessionVariant.toMap();
@@ -6189,6 +6296,7 @@ void SessionImpl::saveStatistics() const
     m_statisticsLastUpdateTimer.start();
     m_isStatisticsDirty = false;
 }
+
 
 void SessionImpl::loadStatistics()
 {

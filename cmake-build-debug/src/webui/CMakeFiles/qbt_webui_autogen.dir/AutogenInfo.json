@@ -1,0 +1,272 @@
+{
+	"BUILD_DIR" : "/home/joe/Desktop/qBittorrent/cmake-build-debug/src/webui/qbt_webui_autogen",
+	"CMAKE_BINARY_DIR" : "/home/joe/Desktop/qBittorrent/cmake-build-debug",
+	"CMAKE_CURRENT_BINARY_DIR" : "/home/joe/Desktop/qBittorrent/cmake-build-debug/src/webui",
+	"CMAKE_CURRENT_SOURCE_DIR" : "/home/joe/Desktop/qBittorrent/src/webui",
+	"CMAKE_EXECUTABLE" : "/usr/bin/cmake",
+	"CMAKE_LIST_FILES" : [ "/home/joe/Desktop/qBittorrent/src/webui/CMakeLists.txt" ],
+	"CMAKE_SOURCE_DIR" : "/home/joe/Desktop/qBittorrent",
+	"CROSS_CONFIG" : false,
+	"DEP_FILE" : "/home/joe/Desktop/qBittorrent/cmake-build-debug/src/webui/qbt_webui_autogen/deps",
+	"DEP_FILE_RULE_NAME" : "qbt_webui_autogen/timestamp",
+	"HEADERS" : 
+	[
+		[
+			"/home/joe/Desktop/qBittorrent/src/webui/api/apicontroller.h",
+			"Mu",
+			"JH45IGJHDZ/moc_apicontroller.cpp",
+			null
+		],
+		[
+			"/home/joe/Desktop/qBittorrent/src/webui/api/apierror.h",
+			"Mu",
+			"JH45IGJHDZ/moc_apierror.cpp",
+			null
+		],
+		[
+			"/home/joe/Desktop/qBittorrent/src/webui/api/appcontroller.h",
+			"Mu",
+			"JH45IGJHDZ/moc_appcontroller.cpp",
+			null
+		],
+		[
+			"/home/joe/Desktop/qBittorrent/src/webui/api/authcontroller.h",
+			"Mu",
+			"JH45IGJHDZ/moc_authcontroller.cpp",
+			null
+		],
+		[
+			"/home/joe/Desktop/qBittorrent/src/webui/api/isessionmanager.h",
+			"Mu",
+			"JH45IGJHDZ/moc_isessionmanager.cpp",
+			null
+		],
+		[
+			"/home/joe/Desktop/qBittorrent/src/webui/api/logcontroller.h",
+			"Mu",
+			"JH45IGJHDZ/moc_logcontroller.cpp",
+			null
+		],
+		[
+			"/home/joe/Desktop/qBittorrent/src/webui/api/rsscontroller.h",
+			"Mu",
+			"JH45IGJHDZ/moc_rsscontroller.cpp",
+			null
+		],
+		[
+			"/home/joe/Desktop/qBittorrent/src/webui/api/searchcontroller.h",
+			"Mu",
+			"JH45IGJHDZ/moc_searchcontroller.cpp",
+			null
+		],
+		[
+			"/home/joe/Desktop/qBittorrent/src/webui/api/serialize/serialize_torrent.h",
+			"Mu",
+			"DFDVFMIZMG/moc_serialize_torrent.cpp",
+			null
+		],
+		[
+			"/home/joe/Desktop/qBittorrent/src/webui/api/synccontroller.h",
+			"Mu",
+			"JH45IGJHDZ/moc_synccontroller.cpp",
+			null
+		],
+		[
+			"/home/joe/Desktop/qBittorrent/src/webui/api/torrentcreatorcontroller.h",
+			"Mu",
+			"JH45IGJHDZ/moc_torrentcreatorcontroller.cpp",
+			null
+		],
+		[
+			"/home/joe/Desktop/qBittorrent/src/webui/api/torrentscontroller.h",
+			"Mu",
+			"JH45IGJHDZ/moc_torrentscontroller.cpp",
+			null
+		],
+		[
+			"/home/joe/Desktop/qBittorrent/src/webui/api/transfercontroller.h",
+			"Mu",
+			"JH45IGJHDZ/moc_transfercontroller.cpp",
+			null
+		],
+		[
+			"/home/joe/Desktop/qBittorrent/src/webui/freediskspacechecker.h",
+			"Mu",
+			"EWIEGA46WW/moc_freediskspacechecker.cpp",
+			null
+		],
+		[
+			"/home/joe/Desktop/qBittorrent/src/webui/webapplication.h",
+			"Mu",
+			"EWIEGA46WW/moc_webapplication.cpp",
+			null
+		],
+		[
+			"/home/joe/Desktop/qBittorrent/src/webui/webui.h",
+			"Mu",
+			"EWIEGA46WW/moc_webui.cpp",
+			null
+		]
+	],
+	"HEADER_EXTENSIONS" : [ "h", "hh", "h++", "hm", "hpp", "hxx", "in", "txx" ],
+	"INCLUDE_DIR" : "/home/joe/Desktop/qBittorrent/cmake-build-debug/src/webui/qbt_webui_autogen/include",
+	"MOC_COMPILATION_FILE" : "/home/joe/Desktop/qBittorrent/cmake-build-debug/src/webui/qbt_webui_autogen/mocs_compilation.cpp",
+	"MOC_DEFINITIONS" : 
+	[
+		"BOOST_ASIO_ENABLE_CANCELIO",
+		"BOOST_ASIO_NO_DEPRECATED",
+		"OPENSSL_NO_SSL2",
+		"QBT_USES_DBUS",
+		"QBT_USES_LIBTORRENT2",
+		"QT_CORE_LIB",
+		"QT_DBUS_LIB",
+		"QT_DISABLE_DEPRECATED_UP_TO=0x060500",
+		"QT_NETWORK_LIB",
+		"QT_NO_CAST_FROM_ASCII",
+		"QT_NO_CAST_FROM_BYTEARRAY",
+		"QT_NO_CAST_TO_ASCII",
+		"QT_NO_NARROWING_CONVERSIONS_IN_CONNECT",
+		"QT_SQL_LIB",
+		"QT_STRICT_ITERATORS",
+		"QT_USE_QSTRINGBUILDER",
+		"QT_XML_LIB",
+		"TORRENT_LINKING_SHARED",
+		"TORRENT_SSL_PEERS",
+		"TORRENT_USE_ASSERTS",
+		"TORRENT_USE_LIBCRYPTO",
+		"TORRENT_USE_OPENSSL"
+	],
+	"MOC_DEPEND_FILTERS" : 
+	[
+		[
+			"Q_PLUGIN_METADATA",
+			"[\n][ \t]*Q_PLUGIN_METADATA[ \t]*\\([^\\)]*FILE[ \t]*\"([^\"]+)\""
+		]
+	],
+	"MOC_INCLUDES" : 
+	[
+		"/home/joe/Desktop/qBittorrent/src",
+		"/usr/include/qt6/QtCore",
+		"/usr/include/qt6",
+		"/usr/lib/qt6/mkspecs/linux-g++",
+		"/usr/include/qt6/QtCore/6.7.0",
+		"/usr/include/qt6/QtCore/6.7.0/QtCore",
+		"/usr/include/qt6/QtNetwork",
+		"/usr/include/qt6/QtSql",
+		"/usr/include/qt6/QtXml",
+		"/usr/include/qt6/QtDBus",
+		"/usr/include",
+		"/usr/include/c++/13.2.1",
+		"/usr/include/c++/13.2.1/x86_64-pc-linux-gnu",
+		"/usr/include/c++/13.2.1/backward",
+		"/usr/lib/gcc/x86_64-pc-linux-gnu/13.2.1/include",
+		"/usr/local/include",
+		"/usr/lib/gcc/x86_64-pc-linux-gnu/13.2.1/include-fixed"
+	],
+	"MOC_MACRO_NAMES" : 
+	[
+		"Q_OBJECT",
+		"Q_GADGET",
+		"Q_NAMESPACE",
+		"Q_NAMESPACE_EXPORT",
+		"Q_GADGET_EXPORT",
+		"Q_ENUM_NS"
+	],
+	"MOC_OPTIONS" : [],
+	"MOC_PATH_PREFIX" : false,
+	"MOC_PREDEFS_CMD" : 
+	[
+		"/sbin/c++",
+		"-dM",
+		"-E",
+		"-c",
+		"/usr/share/cmake/Modules/CMakeCXXCompilerABI.cpp"
+	],
+	"MOC_PREDEFS_FILE" : "/home/joe/Desktop/qBittorrent/cmake-build-debug/src/webui/qbt_webui_autogen/moc_predefs.h",
+	"MOC_RELAXED_MODE" : false,
+	"MOC_SKIP" : [],
+	"MULTI_CONFIG" : false,
+	"PARALLEL" : 8,
+	"PARSE_CACHE_FILE" : "/home/joe/Desktop/qBittorrent/cmake-build-debug/src/webui/CMakeFiles/qbt_webui_autogen.dir/ParseCache.txt",
+	"QT_MOC_EXECUTABLE" : "/usr/lib/qt6/moc",
+	"QT_UIC_EXECUTABLE" : "",
+	"QT_VERSION_MAJOR" : 6,
+	"QT_VERSION_MINOR" : 7,
+	"SETTINGS_FILE" : "/home/joe/Desktop/qBittorrent/cmake-build-debug/src/webui/CMakeFiles/qbt_webui_autogen.dir/AutogenUsed.txt",
+	"SOURCES" : 
+	[
+		[
+			"/home/joe/Desktop/qBittorrent/src/webui/api/apicontroller.cpp",
+			"Mu",
+			null
+		],
+		[
+			"/home/joe/Desktop/qBittorrent/src/webui/api/apierror.cpp",
+			"Mu",
+			null
+		],
+		[
+			"/home/joe/Desktop/qBittorrent/src/webui/api/appcontroller.cpp",
+			"Mu",
+			null
+		],
+		[
+			"/home/joe/Desktop/qBittorrent/src/webui/api/authcontroller.cpp",
+			"Mu",
+			null
+		],
+		[
+			"/home/joe/Desktop/qBittorrent/src/webui/api/logcontroller.cpp",
+			"Mu",
+			null
+		],
+		[
+			"/home/joe/Desktop/qBittorrent/src/webui/api/rsscontroller.cpp",
+			"Mu",
+			null
+		],
+		[
+			"/home/joe/Desktop/qBittorrent/src/webui/api/searchcontroller.cpp",
+			"Mu",
+			null
+		],
+		[
+			"/home/joe/Desktop/qBittorrent/src/webui/api/serialize/serialize_torrent.cpp",
+			"Mu",
+			null
+		],
+		[
+			"/home/joe/Desktop/qBittorrent/src/webui/api/synccontroller.cpp",
+			"Mu",
+			null
+		],
+		[
+			"/home/joe/Desktop/qBittorrent/src/webui/api/torrentcreatorcontroller.cpp",
+			"Mu",
+			null
+		],
+		[
+			"/home/joe/Desktop/qBittorrent/src/webui/api/torrentscontroller.cpp",
+			"Mu",
+			null
+		],
+		[
+			"/home/joe/Desktop/qBittorrent/src/webui/api/transfercontroller.cpp",
+			"Mu",
+			null
+		],
+		[
+			"/home/joe/Desktop/qBittorrent/src/webui/freediskspacechecker.cpp",
+			"Mu",
+			null
+		],
+		[
+			"/home/joe/Desktop/qBittorrent/src/webui/webapplication.cpp",
+			"Mu",
+			null
+		],
+		[ "/home/joe/Desktop/qBittorrent/src/webui/webui.cpp", "Mu", null ]
+	],
+	"USE_BETTER_GRAPH" : false,
+	"VERBOSITY" : 0
+}

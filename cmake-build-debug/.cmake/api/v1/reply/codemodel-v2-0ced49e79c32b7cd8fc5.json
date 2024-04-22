@@ -1,0 +1,282 @@
+{
+	"configurations" : 
+	[
+		{
+			"directories" : 
+			[
+				{
+					"build" : ".",
+					"childIndexes" : 
+					[
+						1,
+						6
+					],
+					"hasInstallRule" : true,
+					"jsonFile" : "directory-.-Debug-f5ebdc15457944623624.json",
+					"minimumCMakeVersion" : 
+					{
+						"string" : "3.16"
+					},
+					"projectIndex" : 0,
+					"source" : "."
+				},
+				{
+					"build" : "src",
+					"childIndexes" : 
+					[
+						2,
+						3,
+						4,
+						5
+					],
+					"hasInstallRule" : true,
+					"jsonFile" : "directory-src-Debug-b6cf2213fc5053b67c22.json",
+					"minimumCMakeVersion" : 
+					{
+						"string" : "3.16"
+					},
+					"parentIndex" : 0,
+					"projectIndex" : 0,
+					"source" : "src"
+				},
+				{
+					"build" : "src/app",
+					"hasInstallRule" : true,
+					"jsonFile" : "directory-src.app-Debug-7c046c0172df8d0b0162.json",
+					"minimumCMakeVersion" : 
+					{
+						"string" : "3.16"
+					},
+					"parentIndex" : 1,
+					"projectIndex" : 0,
+					"source" : "src/app",
+					"targetIndexes" : 
+					[
+						0,
+						1,
+						2,
+						9
+					]
+				},
+				{
+					"build" : "src/base",
+					"jsonFile" : "directory-src.base-Debug-85461d0ec0c55311a4f7.json",
+					"minimumCMakeVersion" : 
+					{
+						"string" : "3.16"
+					},
+					"parentIndex" : 1,
+					"projectIndex" : 0,
+					"source" : "src/base",
+					"targetIndexes" : 
+					[
+						3,
+						4,
+						5
+					]
+				},
+				{
+					"build" : "src/gui",
+					"jsonFile" : "directory-src.gui-Debug-f79ee56ee11efe9bc342.json",
+					"minimumCMakeVersion" : 
+					{
+						"string" : "3.16"
+					},
+					"parentIndex" : 1,
+					"projectIndex" : 0,
+					"source" : "src/gui",
+					"targetIndexes" : 
+					[
+						6,
+						7,
+						8
+					]
+				},
+				{
+					"build" : "src/webui",
+					"jsonFile" : "directory-src.webui-Debug-6f2e145859320b5dd282.json",
+					"minimumCMakeVersion" : 
+					{
+						"string" : "3.16"
+					},
+					"parentIndex" : 1,
+					"projectIndex" : 0,
+					"source" : "src/webui",
+					"targetIndexes" : 
+					[
+						10,
+						11,
+						12
+					]
+				},
+				{
+					"build" : "dist",
+					"childIndexes" : 
+					[
+						7
+					],
+					"hasInstallRule" : true,
+					"jsonFile" : "directory-dist-Debug-b98c3937539d7ed31c0a.json",
+					"minimumCMakeVersion" : 
+					{
+						"string" : "3.16"
+					},
+					"parentIndex" : 0,
+					"projectIndex" : 0,
+					"source" : "dist"
+				},
+				{
+					"build" : "dist/unix",
+					"hasInstallRule" : true,
+					"jsonFile" : "directory-dist.unix-Debug-93e03ab0ba0c96f3f72b.json",
+					"minimumCMakeVersion" : 
+					{
+						"string" : "3.16"
+					},
+					"parentIndex" : 6,
+					"projectIndex" : 0,
+					"source" : "dist/unix"
+				}
+			],
+			"name" : "Debug",
+			"projects" : 
+			[
+				{
+					"directoryIndexes" : 
+					[
+						0,
+						1,
+						2,
+						3,
+						4,
+						5,
+						6,
+						7
+					],
+					"name" : "qBittorrent",
+					"targetIndexes" : 
+					[
+						0,
+						1,
+						2,
+						3,
+						4,
+						5,
+						6,
+						7,
+						8,
+						9,
+						10,
+						11,
+						12
+					]
+				}
+			],
+			"targets" : 
+			[
+				{
+					"directoryIndex" : 2,
+					"id" : "qbt_app::@ff93792cf40911dae1b8",
+					"jsonFile" : "target-qbt_app-Debug-392452b26da2b66ad6b0.json",
+					"name" : "qbt_app",
+					"projectIndex" : 0
+				},
+				{
+					"directoryIndex" : 2,
+					"id" : "qbt_app_autogen::@ff93792cf40911dae1b8",
+					"jsonFile" : "target-qbt_app_autogen-Debug-ad46067a2084e1d4f9ef.json",
+					"name" : "qbt_app_autogen",
+					"projectIndex" : 0
+				},
+				{
+					"directoryIndex" : 2,
+					"id" : "qbt_app_autogen_timestamp_deps::@ff93792cf40911dae1b8",
+					"jsonFile" : "target-qbt_app_autogen_timestamp_deps-Debug-6cd1e1b8cd453bd4a67a.json",
+					"name" : "qbt_app_autogen_timestamp_deps",
+					"projectIndex" : 0
+				},
+				{
+					"directoryIndex" : 3,
+					"id" : "qbt_base::@da17c8cd1000ca7e4b79",
+					"jsonFile" : "target-qbt_base-Debug-3afe3bee3b94b72021f2.json",
+					"name" : "qbt_base",
+					"projectIndex" : 0
+				},
+				{
+					"directoryIndex" : 3,
+					"id" : "qbt_base_autogen::@da17c8cd1000ca7e4b79",
+					"jsonFile" : "target-qbt_base_autogen-Debug-635fbf6a9637600975dc.json",
+					"name" : "qbt_base_autogen",
+					"projectIndex" : 0
+				},
+				{
+					"directoryIndex" : 3,
+					"id" : "qbt_base_autogen_timestamp_deps::@da17c8cd1000ca7e4b79",
+					"jsonFile" : "target-qbt_base_autogen_timestamp_deps-Debug-904f50264a7019d28dae.json",
+					"name" : "qbt_base_autogen_timestamp_deps",
+					"projectIndex" : 0
+				},
+				{
+					"directoryIndex" : 4,
+					"id" : "qbt_gui::@7675e61a69a6135e3026",
+					"jsonFile" : "target-qbt_gui-Debug-5b7b5babe8af432b26d3.json",
+					"name" : "qbt_gui",
+					"projectIndex" : 0
+				},
+				{
+					"directoryIndex" : 4,
+					"id" : "qbt_gui_autogen::@7675e61a69a6135e3026",
+					"jsonFile" : "target-qbt_gui_autogen-Debug-6b7337acc2793cc136e0.json",
+					"name" : "qbt_gui_autogen",
+					"projectIndex" : 0
+				},
+				{
+					"directoryIndex" : 4,
+					"id" : "qbt_gui_autogen_timestamp_deps::@7675e61a69a6135e3026",
+					"jsonFile" : "target-qbt_gui_autogen_timestamp_deps-Debug-3c22713c8ff07d5c152e.json",
+					"name" : "qbt_gui_autogen_timestamp_deps",
+					"projectIndex" : 0
+				},
+				{
+					"directoryIndex" : 2,
+					"id" : "qbt_update_translations::@ff93792cf40911dae1b8",
+					"jsonFile" : "target-qbt_update_translations-Debug-b272ac1d37ae90df4d1a.json",
+					"name" : "qbt_update_translations",
+					"projectIndex" : 0
+				},
+				{
+					"directoryIndex" : 5,
+					"id" : "qbt_webui::@00d244fdeb748d3facd0",
+					"jsonFile" : "target-qbt_webui-Debug-862452fbf4d537739ab7.json",
+					"name" : "qbt_webui",
+					"projectIndex" : 0
+				},
+				{
+					"directoryIndex" : 5,
+					"id" : "qbt_webui_autogen::@00d244fdeb748d3facd0",
+					"jsonFile" : "target-qbt_webui_autogen-Debug-51d8425fb796af7a9a97.json",
+					"name" : "qbt_webui_autogen",
+					"projectIndex" : 0
+				},
+				{
+					"directoryIndex" : 5,
+					"id" : "qbt_webui_autogen_timestamp_deps::@00d244fdeb748d3facd0",
+					"jsonFile" : "target-qbt_webui_autogen_timestamp_deps-Debug-37618bdbb16f8917e552.json",
+					"name" : "qbt_webui_autogen_timestamp_deps",
+					"projectIndex" : 0
+				}
+			]
+		}
+	],
+	"kind" : "codemodel",
+	"paths" : 
+	{
+		"build" : "/home/joe/Desktop/qBittorrent/cmake-build-debug",
+		"source" : "/home/joe/Desktop/qBittorrent"
+	},
+	"version" : 
+	{
+		"major" : 2,
+		"minor" : 7
+	}
+}

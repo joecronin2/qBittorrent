@@ -1,0 +1,34 @@
+{
+	"backtrace" : 0,
+	"backtraceGraph" : 
+	{
+		"commands" : [],
+		"files" : 
+		[
+			"src/webui/CMakeLists.txt"
+		],
+		"nodes" : 
+		[
+			{
+				"file" : 0
+			}
+		]
+	},
+	"dependencies" : 
+	[
+		{
+			"backtrace" : 0,
+			"id" : "qbt_base::@da17c8cd1000ca7e4b79"
+		}
+	],
+	"id" : "qbt_webui_autogen_timestamp_deps::@00d244fdeb748d3facd0",
+	"isGeneratorProvided" : true,
+	"name" : "qbt_webui_autogen_timestamp_deps",
+	"paths" : 
+	{
+		"build" : "src/webui",
+		"source" : "src/webui"
+	},
+	"sources" : [],
+	"type" : "UTILITY"
+}

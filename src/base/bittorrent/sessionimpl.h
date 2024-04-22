@@ -378,6 +378,32 @@ namespace BitTorrent
         void setMaxActiveUploads(int max) override;
         int maxActiveTorrents() const override;
         void setMaxActiveTorrents(int max) override;
+
+        bool ULTransferLimitEnabled() const override;
+        void setULTransferLimit(bool state) override;
+        int ULTransferLimitTimeAmount() const override;
+        void setULTransferLimitTimeAmount(int timeAmount) override;
+        QString ULTransferLimitTimeUnit() const override;
+        void setULTransferLimitTimeUnit(const QString& unit) override;
+        int ULTransferLimitDataAmount() const override;
+        void setULTransferLimitDataAmount(int amount) override;
+        QString ULTransferLimitDataUnit() const override;
+        void setULTransferLimitDataUnit(const QString& unit) override;
+        int ULTransferLimitProgress() const override;
+
+        bool DLTransferLimitEnabled() const override;
+        int DLTransferLimitTimeAmount() const override;
+        void setDLTransferLimitTimeAmount(int timeAmount) override;
+        QString DLTransferLimitTimeUnit() const override;
+        void setDLTransferLimitTimeUnit(const QString& unit) override;
+        int DLTransferLimitDataAmount() const override;
+        void setDLTransferLimitDataAmount(int amount) override;
+        QString DLTransferLimitDataUnit() const override;
+        void setDLTransferLimitDataUnit(const QString& unit) override;
+        int DLTransferLimitProgress() const override;
+
+        qint64 getRemainingSessionUL() const override;
+
         BTProtocol btProtocol() const override;
         void setBTProtocol(BTProtocol protocol) override;
         bool isUTPRateLimited() const override;
@@ -592,9 +618,17 @@ namespace BitTorrent
         void setSessionULLimit();
         void setSessionDLLimit();
 
+
+        typedef struct {
+            QDateTime startDateTime;
+            QDateTime endDateTime;
+            qint64 sessionUpload;
+            qint64 sessionDownload;
+        } SessionInfo;
+
         // only called once
-        void saveSessionInfo() const;
-        QVariantList loadPreviousSessionsInfo();
+        void saveSessionInfo();
+        QList<SessionInfo> loadPreviousSessionsInfo();
 
         void setTotalULLimit(qint64 limit);
         void setTotalDLLimit(qint64 limit);
@@ -661,6 +695,25 @@ namespace BitTorrent
         CachedSettingValue<int> m_maxUploads;
         CachedSettingValue<int> m_maxConnectionsPerTorrent;
         CachedSettingValue<int> m_maxUploadsPerTorrent;
+
+        CachedSettingValue<bool> m_ULTransferLimitEnabled;
+        CachedSettingValue<int> m_ULTransferLimitTimeAmount;
+        CachedSettingValue<QString> m_ULTransferLimitTimeUnit;
+
+        CachedSettingValue<int> m_ULTransferLimitDataAmount;
+        CachedSettingValue<QString> m_ULTransferLimitDataUnit;
+
+        CachedSettingValue<int> m_ULTransferLimitProgress;
+
+        CachedSettingValue<bool> m_DLTransferLimitEnabled;
+        CachedSettingValue<int> m_DLTransferLimitTimeAmount;
+        CachedSettingValue<QString> m_DLTransferLimitTimeUnit;
+
+        CachedSettingValue<int> m_DLTransferLimitDataAmount;
+        CachedSettingValue<QString> m_DLTransferLimitDataUnit;
+
+        CachedSettingValue<int> m_DLTransferLimitProgress;
+
         CachedSettingValue<BTProtocol> m_btProtocol;
         CachedSettingValue<bool> m_isUTPRateLimited;
         CachedSettingValue<MixedModeAlgorithm> m_utpMixedMode;

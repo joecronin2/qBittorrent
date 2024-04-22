@@ -1,0 +1,27 @@
+{
+	"BUILD_DIR" : "/home/joe/Desktop/qBittorrent/cmake-build-debug/src/app/qbt_app_autogen",
+	"CMAKE_BINARY_DIR" : "/home/joe/Desktop/qBittorrent/cmake-build-debug",
+	"CMAKE_CURRENT_BINARY_DIR" : "/home/joe/Desktop/qBittorrent/cmake-build-debug/src/app",
+	"CMAKE_CURRENT_SOURCE_DIR" : "/home/joe/Desktop/qBittorrent/src/app",
+	"CMAKE_SOURCE_DIR" : "/home/joe/Desktop/qBittorrent",
+	"CROSS_CONFIG" : false,
+	"GENERATOR" : "Ninja",
+	"INCLUDE_DIR" : "/home/joe/Desktop/qBittorrent/cmake-build-debug/src/app/qbt_app_autogen/include",
+	"INPUTS" : 
+	[
+		"/home/joe/Desktop/qBittorrent/src/gui/gpl.html",
+		"/home/joe/Desktop/qBittorrent/src/gui/translators.html",
+		"/home/joe/Desktop/qBittorrent/src/gui/thanks.html"
+	],
+	"LOCK_FILE" : "/home/joe/Desktop/qBittorrent/cmake-build-debug/src/app/CMakeFiles/qbt_app_autogen.dir/AutoRcc_about_TUYZJ7PCOQ_Lock.lock",
+	"MULTI_CONFIG" : false,
+	"OPTIONS" : [ "--compress-algo", "best", "--threshold", "5", "-name", "about" ],
+	"OUTPUT_CHECKSUM" : "TUYZJ7PCOQ",
+	"OUTPUT_NAME" : "qrc_about.cpp",
+	"RCC_EXECUTABLE" : "/usr/lib/qt6/rcc",
+	"RCC_LIST_OPTIONS" : [ "--list" ],
+	"SETTINGS_FILE" : "/home/joe/Desktop/qBittorrent/cmake-build-debug/src/app/CMakeFiles/qbt_app_autogen.dir/AutoRcc_about_TUYZJ7PCOQ_Used.txt",
+	"SOURCE" : "/home/joe/Desktop/qBittorrent/src/gui/about.qrc",
+	"USE_BETTER_GRAPH" : false,
+	"VERBOSITY" : 0
+}

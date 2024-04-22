@@ -589,6 +589,16 @@ namespace BitTorrent
         void saveStatistics() const;
         void loadStatistics();
 
+        void setSessionULLimit();
+        void setSessionDLLimit();
+
+        // only called once
+        void saveSessionInfo() const;
+        QVariantList loadPreviousSessionsInfo();
+
+        void setTotalULLimit(qint64 limit);
+        void setTotalDLLimit(qint64 limit);
+
         void updateTrackerEntryStatuses(lt::torrent_handle torrentHandle, QHash<std::string, QHash<lt::tcp::endpoint, QMap<int, int>>> updatedTrackers);
 
         // BitTorrent

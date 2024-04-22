@@ -611,6 +611,7 @@ SessionImpl::~SessionImpl()
     // After this, (ideally) no more important alerts will be generated/handled
     saveResumeData();
 
+    saveSessionInfo();
     saveStatistics();
 
     // We must delete FilterParserThread
@@ -6116,6 +6117,64 @@ void SessionImpl::processTrackerStatuses()
     m_updatedTrackerStatuses.clear();
 }
 
+
+struct SessionInfo {
+    QDateTime startDateTime;
+    QDateTime endDateTime;
+    qint64 sessionUpload;
+    qint64 sessionDownload;
+};
+
+void SessionImpl::saveSessionInfo() const {
+    qDebug() << "savesessioninfo called";
+
+    // Load the list of session statistics
+    QList sessions = loadPreviousSessionsInfo();
+
+    // Make a map to store the new session statistics
+    SessionInfo newSession;
+    newSession.startDateTime = m_status.sessionStart;
+    newSession.endDateTime = QDateTime::currentDateTime();
+    newSession.sessionUpload = m_status.totalUpload;
+    newSession.sessionDownload = m_status.totalDownload;
+
+    // Push the new session to the list
+    sessions.append(newStats);
+
+    QVariantList sessionsVariantList;
+    for (const auto& session : sessions) {
+        QVariantMap sessionMap;
+        sessionMap[u"startDateTime"_s] = session.startDateTime;
+        sessionMap[u"endDateTime"_s] = session.endDateTime;
+        sessionMap[u"sessionUpload"_s] = session.sessionUpload;
+        sessionMap[u"sessionDownload"_s] = session.sessionDownload;
+        sessionsVariantList.append(sessionMap);
+    }
+
+    qDebug() << sessions.size();
+
+    // Save the list back
+    settings->setValue(u"Stats/Sessions"_s, sessions);
+
+}
+
+QList<SessionInfo> SessionImpl::loadPreviousSessionsInfo() {
+    // make a list
+    QVariantList sessions = settings->value(u"Stats/Sessions"_s).toList();
+
+    // Convert QVariantList to SessionInfo list
+    for (const QVariant& sessionVariant : sessionsVariantList) {
+        QVariantMap sessionMap = sessionVariant.toMap();
+        SessionInfo session;
+        session.startDateTime = sessionMap[u"startDateTime"_s].toDateTime();
+        session.endDateTime = sessionMap[u"endDateTime"_s].toDateTime();
+        session.sessionUpload = sessionMap[u"sessionUpload"_s].toLongLong();
+        session.sessionDownload = sessionMap[u"sessionDownload"_s].toLongLong();
+        sessions.append(session);
+    }
+    return sessions;
+}
+
 void SessionImpl::saveStatistics() const
 {
     if (!m_isStatisticsDirty)
@@ -6138,6 +6197,17 @@ void SessionImpl::loadStatistics()
 
     m_previouslyDownloaded = value[u"AlltimeDL"_s].toLongLong();
     m_previouslyUploaded = value[u"AlltimeUL"_s].toLongLong();
+}
+
+void SessionImpl::setTotalULLimit(qint64 limit)
+{
+
+    m_status.sessionUploadLimit = limit;
+}
+
+void SessionImpl::setTotalDLLimit(qint64 limit)
+{
+    m_status.sessionDownloadLimit = limit;
 }
 
 void SessionImpl::updateTrackerEntryStatuses(lt::torrent_handle torrentHandle, QHash<std::string, QHash<lt::tcp::endpoint, QMap<int, int>>> updatedTrackers)

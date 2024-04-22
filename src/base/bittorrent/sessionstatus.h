@@ -56,6 +56,12 @@ namespace BitTorrent
         qint64 trackerUploadRate = 0;
         qint64 trackerDownloadRate = 0;
 
+        QDateTime sessionStart = QDateTime::currentDateTime();
+
+        // total UL/DL limits for a session
+        qint64 sessionUploadLimit = 0;
+        qint64 sessionDownloadLimit = 0;
+
         qint64 allTimeDownload = 0;
         qint64 allTimeUpload = 0;
         qint64 totalDownload = 0;
